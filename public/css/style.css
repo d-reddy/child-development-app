@@ -1,1 +1,7 @@
-body { padding-top:30px; }
+body { 
+	padding-top:30px; 
+}
+
+#burfder-main {
+	width:100%;
+}
