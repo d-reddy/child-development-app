@@ -1,1 +1,11 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService', 'GeekCtrl', 'GeekService']);
+angular.module('learned', ['ngRoute', 
+                           'appRoutes', 
+						   'MainController', 
+						   'MathController', 
+						   'SpellingController', 
+						   'ReadingController', 
+						   'GameController',
+						   'VideoController', 
+   						   'GeekService', 
+   						   'NerdService'
+						   ]);
