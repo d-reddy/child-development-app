@@ -24,7 +24,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
 
 		.when('/games', {
-			templateUrl: 'views/games.html',
+			templateUrl: 'views/games/games.html',
 			controller: 'GameController'	
 		})
 		

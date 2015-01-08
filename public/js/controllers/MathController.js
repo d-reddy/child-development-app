@@ -1,4 +1,4 @@
-angular.module('MathController', []).controller('MathController', function($scope) {
+angular.module('Math', []).controller('MathController', function($scope) {
 
 	$scope.tagline = 'Math, coming soon!';
 

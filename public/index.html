@@ -7,13 +7,24 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css"> <!-- custom styles -->
+	<link rel="stylesheet" href="angular-material/angular-material.min.css">
+	<!-- custom styles -->
+	<link rel="stylesheet" href="style.css"> 
+	<link rel="stylesheet" href="main.css"> 
 
-	<!-- JS -->
+
+	<!-- JS thirdparty-->
+	<script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
 	<script src="jquery/dist/jquery.min.js"></script>
 	<script src="angular/angular.min.js"></script>
 	<script src="angular-route/angular-route.min.js"></script>
 	<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="angular-material/angular-material.min.js"></script>
+	<script src="angular-animate/angular-animate.min.js"></script>
+	<script src="angular-aria/angular-aria.min.js"></script>
+
+	<!-- JS -->
+	<script src="js/app.documentUpdated.js"></script>
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/GameController.js"></script>
@@ -44,7 +55,7 @@
 				<li><a href="/videos">YouTube</a></li>
 			</ul>
 		</nav>
-		
+	
 		<!-- ANGULAR DYNAMIC CONTENT -->
 		<div ng-view></div>
 	</div>

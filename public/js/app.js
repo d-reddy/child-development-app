@@ -1,11 +1,11 @@
 angular.module('learned', ['ngRoute', 
                            'appRoutes', 
-						   'MainController', 
-						   'MathController', 
-						   'SpellingController', 
-						   'ReadingController', 
-						   'GameController',
-						   'VideoController', 
+						   'Main', 
+						   'Math', 
+						   'Spelling', 
+						   'Reading', 
+						   'Game',
+						   'Video', 
    						   'GeekService', 
    						   'NerdService'
 						   ]);

@@ -1,4 +1,4 @@
-angular.module('ReadingController', []).controller('ReadingController', function($scope) {
+angular.module('Reading', []).controller('ReadingController', function($scope) {
 
 	$scope.tagline = 'Reading, coming soon!';	
 
