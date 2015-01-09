@@ -1,7 +1,12 @@
-<link rel="stylesheet" href="games/memory.css"> 
+<link rel="stylesheet" href="games/menu.css"> 
 <script src="js/games/games.js"></script> 
 
 <div class="jumbotron text-center">
 	<h1>Game Time, huh</h1>
 	<p>{{ tagline }}</p>
+
+    <span ng-repeat="game in games">
+        <button class="gamebutton" id="{{game.id}}" ng-style="{ 'background-image': 'url({{game.img}})'}" ng-click="game.action()"></button>
+    </span>
+
 </div>

@@ -7,5 +7,6 @@ angular.module('learned', ['ngRoute',
 						   'Game',
 						   'Video', 
    						   'GeekService', 
-   						   'NerdService'
+   						   'NerdService',
+                           'Memory'
 						   ]);

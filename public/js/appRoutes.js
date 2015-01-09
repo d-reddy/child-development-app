@@ -1,33 +1,38 @@
 angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
-	$routeProvider
+        $routeProvider
 
 		// home page
 		.when('/', {
-			templateUrl: 'views/home.html',
-			controller: 'MainController'
-		})
+            templateUrl: 'views/home.html',
+            controller: 'MainController'
+        })
 
 		.when('/math', {
-			templateUrl: 'views/default.html',
-			controller: 'MathController'
-		})
+            templateUrl: 'views/default.html',
+            controller: 'MathController'
+        })
 
 		.when('/spelling', {
-			templateUrl: 'views/default.html',
-			controller: 'SpellingController'	
-		})
+            templateUrl: 'views/default.html',
+            controller: 'SpellingController'
+        })
 
 		.when('/reading', {
-			templateUrl: 'views/default.html',
-			controller: 'ReadingController'	
-		})
+            templateUrl: 'views/default.html',
+            controller: 'ReadingController'
+        })
 
 		.when('/games', {
-			templateUrl: 'views/games/games.html',
-			controller: 'GameController'	
-		})
-		
+            templateUrl: 'views/games/games.html',
+            controller: 'GameController'
+        })
+
+   		.when('/games/memory', {
+            templateUrl: 'views/games/memory/memory.html',
+            controller: 'MemoryController'
+        })
+
 		.when('/videos', {
 			templateUrl: 'views/default.html',
 			controller: 'VideoController'	
