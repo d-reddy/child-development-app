@@ -1,4 +1,7 @@
 /*TODO: would like to convert this to use less */
+.memory #gameboard {
+
+}
 
 .memory .flip {
   -webkit-perspective: 800;
