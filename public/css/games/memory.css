@@ -8,10 +8,10 @@
   -ms-perspective: 800;
   -moz-perspective: 800;
   -o-perspective: 800;
-   width: 400px;
+   width: 200px;
    height: 200px;
    position: relative;
-   margin: 50px auto;
+   margin: 10px;
 }
 .memory .flip .card.flipped {
   transform:rotatey(-180deg);
@@ -54,17 +54,15 @@
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1;
-  background: black;
-  color: white;
   cursor: pointer;
-  
+  background-image: url('/img/memory/cardbkg.jpg');
+  /*background-image: url('/img/memory/done.jpg');*/
 }
 .memory .flip .card .back {
-    background: blue;
-    background: white;
-    color: black;
-    cursor: pointer;
-    
+  color: black;
+  cursor: pointer;
+  background-color: blue;
+	    
   transform:rotatey(-180deg);
   -ms-transform:rotatey(-180deg); /* IE 9 */
   -moz-transform:rotatey(-180deg); /* Firefox */

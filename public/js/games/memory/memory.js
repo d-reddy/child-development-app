@@ -14,10 +14,10 @@
 				self.data("flip-setup", true);
 				
 				/* card flip */
-				self.click(function(){
-				  $(this).find(".card").toggleClass("flipped");
-				  return false;
-				});
+				//self.click(function(){
+				//  $(this).find(".card").toggleClass("flipped");
+				//  return false;
+				//});
 			});
 		});
 	});

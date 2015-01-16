@@ -1,1 +1,3 @@
 C:\projects\repos\learned\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\dreddy\Desktop\test\learned\obj\Debug\LearnEd.njsprojResolveAssemblyReference.cache
+C:\Users\dreddy\Desktop\test\learned\bin\Microsoft.NodejsTools.WebRole.dll
