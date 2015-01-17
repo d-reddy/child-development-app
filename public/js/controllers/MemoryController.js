@@ -6,7 +6,7 @@ angular.module('Memory', []).controller('MemoryController', function ($scope, me
 
     $scope.cardClick = function (card, $event) {
         
-        if (memory.canClick()) {
+        if (memory.canClick(card)) {
             memory.cardClick(card);
             setTimeout(function () {
                 memory.evaluate();
@@ -21,4 +21,3 @@ angular.module('Memory', []).controller('MemoryController', function ($scope, me
         }
     }
 });
-

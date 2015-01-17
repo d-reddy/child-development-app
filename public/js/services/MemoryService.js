@@ -42,7 +42,12 @@ angular.module('MemoryService', []).factory('memory', ['$http', function($http) 
             }    
         }
 
-	    self.canClick = function() {
+        self.canClick = function (card) {
+            
+            if (card.complete) {
+                return false;
+            }
+
 		    //run through the game logic
 		    var flippedCards = _.filter(self.cards, function(val) {
 			    return val.flipped && !val.complete;
