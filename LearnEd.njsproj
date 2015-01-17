@@ -18,9 +18,14 @@
   <ItemGroup>
     <Content Include="bower.json" />
     <Content Include="package.json" />
+    <Content Include="public\css\math\addition.css" />
     <Content Include="public\css\math\menu.css" />
+    <Content Include="public\css\flip.css" />
+    <Content Include="public\img\300x300.jpg" />
+    <Content Include="public\img\addition.jpg" />
+    <Content Include="public\img\burfder.jpg" />
     <Content Include="public\img\cars_home.jpg" />
-    <Content Include="public\img\lemonpop.jpg" />
+    <Content Include="public\img\construction.jpg" />
     <Content Include="public\img\memory.jpg" />
     <Content Include="public\img\memory\img0.jpg" />
     <Content Include="public\img\memory\img1.jpg" />
@@ -28,6 +33,7 @@
     <Content Include="public\img\memory\img3.jpg" />
     <Content Include="public\img\memory\img4.jpg" />
     <Content Include="public\img\memory\img5.jpg" />
+    <Content Include="public\img\win.jpg" />
     <Content Include="public\lib\underscore\.bower.json" />
     <Content Include="public\lib\underscore\.eslintrc" />
     <Content Include="public\lib\underscore\.gitignore" />
@@ -38,8 +44,11 @@
     <Content Include="public\lib\underscore\README.md" />
     <Content Include="public\lib\underscore\underscore-min.map" />
     <Content Include="public\views\math\math.html" />
+    <Content Include="public\views\math\addition.html" />
     <Content Include="README.md" />
+    <Compile Include="public\js\controllers\AdditionController.js" />
     <Compile Include="public\js\controllers\MemoryController.js" />
+    <Compile Include="public\js\services\AdditionService.js" />
     <Compile Include="public\js\services\MemoryService.js" />
     <Compile Include="public\lib\underscore\underscore-min.js" />
     <Compile Include="public\lib\underscore\underscore.js" />
@@ -490,7 +499,7 @@
     <Compile Include="public\lib\jquery\src\sizzle\dist\sizzle.min.js" />
     <Compile Include="public\lib\jquery\src\traversing\var\rneedsContext.js" />
     <Content Include="public\views\games\games.html" />
-    <Content Include="public\views\games\memory\memory.html" />
+    <Content Include="public\views\games\memory.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app" />
@@ -608,7 +617,6 @@
     <Folder Include="public\lib\underscore\" />
     <Folder Include="public\views" />
     <Folder Include="public\views\games" />
-    <Folder Include="public\views\games\memory" />
     <Folder Include="public\views\math\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

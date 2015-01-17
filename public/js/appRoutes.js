@@ -13,6 +13,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'MathController'
         })
 
+        .when('/math/addition', {
+            templateUrl: 'views/math/addition.html',
+            controller: 'AdditionController'
+        })
+
 		.when('/spelling', {
             templateUrl: 'views/default.html',
             controller: 'SpellingController'
@@ -29,7 +34,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
 
    		.when('/games/memory', {
-            templateUrl: 'views/games/memory/memory.html',
+            templateUrl: 'views/games/memory.html',
             controller: 'MemoryController'
         })
 

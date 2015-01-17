@@ -2,7 +2,7 @@ angular.module('Math', []).controller('MathController', function($scope) {
     $scope.lessons = [
         {
             id: 'addFlash',
-            img: '/img/construction.jpg',
+            img: '/img/addition.jpg',
             action: function () {
                 window.location.href = '/math/addition';
             }
