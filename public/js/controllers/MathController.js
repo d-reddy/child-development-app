@@ -13,6 +13,13 @@ angular.module('Math', []).controller('MathController', function($scope) {
             action: function () {
                 window.location.href = '/math/subtraction';
             }
+        },
+        {
+            id: 'multiplicationFlash',
+            img: '/img/construction.jpg',
+            action: function () {
+                window.location.href = '/math/multiplication';
+            }
         }
     ]
 
