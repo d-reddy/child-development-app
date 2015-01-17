@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="math/menu.css"> 
+<!--<script src="js/games/games.js"></script>--> 
+
+<div>
+    <div class="row">
+        <div class="col-xs-4 col-md-4 col-lg-4" ng-repeat="lesson in lessons">
+            <span>
+                <button class="lessonbutton" id="{{lesson.id}}" ng-style="{ 'background-image': 'url({{lesson.img}})'}" ng-click="lesson.action()"></button>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,4 @@
 angular.module('Game', []).controller('GameController', function($scope) {
-
-	$scope.tagline = 'Game controller';	
-
     $scope.games = [
         {
             id: 'memory',
@@ -11,10 +8,17 @@ angular.module('Game', []).controller('GameController', function($scope) {
             }
         },
         {
-            id: 'lemonpop',
-            img: '/img/lemonpop.jpg',
+            id: 'inprog1',
+            img: '/img/construction.jpg',
             action: function (){
-                window.location.href = 'games/lemonpop';
+                window.location.href = '/games/inprog1';
+            }
+        },
+        {
+            id: 'inprog2',
+            img: '/img/construction.jpg',
+            action: function () {
+                window.location.href = '/games/inprog2';
             }
         }
     ]

@@ -18,6 +18,7 @@
   <ItemGroup>
     <Content Include="bower.json" />
     <Content Include="package.json" />
+    <Content Include="public\css\math\menu.css" />
     <Content Include="public\img\cars_home.jpg" />
     <Content Include="public\img\lemonpop.jpg" />
     <Content Include="public\img\memory.jpg" />
@@ -36,6 +37,7 @@
     <Content Include="public\lib\underscore\package.json" />
     <Content Include="public\lib\underscore\README.md" />
     <Content Include="public\lib\underscore\underscore-min.map" />
+    <Content Include="public\views\math\math.html" />
     <Content Include="README.md" />
     <Compile Include="public\js\controllers\MemoryController.js" />
     <Compile Include="public\js\services\MemoryService.js" />
@@ -63,8 +65,6 @@
     <Compile Include="public\js\controllers\SpellingController.js" />
     <Compile Include="public\js\controllers\VideoController.js" />
     <Compile Include="public\js\games\games.js" />
-    <Compile Include="public\js\services\GeekService.js" />
-    <Compile Include="public\js\services\NerdService.js" />
     <Compile Include="public\js\games\memory\memory.js" />
     <Content Include="public\lib\angular\angular-csp.css" />
     <Content Include="public\lib\angular\.bower.json" />
@@ -499,6 +499,7 @@
     <Folder Include="public" />
     <Folder Include="public\css" />
     <Folder Include="public\css\games" />
+    <Folder Include="public\css\math\" />
     <Folder Include="public\img" />
     <Folder Include="public\img\memory\" />
     <Folder Include="public\js" />
@@ -608,6 +609,7 @@
     <Folder Include="public\views" />
     <Folder Include="public\views\games" />
     <Folder Include="public\views\games\memory" />
+    <Folder Include="public\views\math\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />

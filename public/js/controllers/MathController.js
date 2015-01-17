@@ -1,5 +1,19 @@
 angular.module('Math', []).controller('MathController', function($scope) {
-
-	$scope.tagline = 'Math, coming soon!';
+    $scope.lessons = [
+        {
+            id: 'addFlash',
+            img: '/img/construction.jpg',
+            action: function () {
+                window.location.href = '/math/addition';
+            }
+        },
+        {
+            id: 'subtractFlash',
+            img: '/img/construction.jpg',
+            action: function () {
+                window.location.href = '/math/subtraction';
+            }
+        }
+    ]
 
 });

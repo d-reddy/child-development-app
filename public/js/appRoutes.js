@@ -9,7 +9,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
 
 		.when('/math', {
-            templateUrl: 'views/default.html',
+            templateUrl: 'views/math/math.html',
             controller: 'MathController'
         })
 
