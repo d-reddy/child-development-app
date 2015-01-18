@@ -4,21 +4,21 @@ angular.module('Game', []).controller('GameController', function($scope) {
             id: 'memory',
             img: '/img/memory.jpg',
             action: function (){
-                location.href = '/games/memory';
+                location.href = location.href + 'games/memory';
             }
         },
         {
             id: 'inprog1',
             img: '/img/construction.jpg',
             action: function (){
-               location.href = '/games/inprog1';
+               location.href = location.href + 'games/inprog1';
             }
         },
         {
             id: 'inprog2',
             img: '/img/construction.jpg',
             action: function () {
-                location.href = '/games/inprog2';
+                location.href = location.href + 'games/inprog2';
             }
         }
     ]
