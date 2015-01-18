@@ -1,5 +1,6 @@
 angular.module('Main', ['ngMaterial']).controller('MainController', function($scope, $timeout, $mdBottomSheet) {
-    $scope.title = 'Menu';    
+    $scope.title = 'Menu';
+    alert('this works');
     $scope.showGridBottomSheet = function ($event) {
         $scope.alert = '';
         $mdBottomSheet.show({
