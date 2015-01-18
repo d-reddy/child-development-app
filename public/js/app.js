@@ -1,5 +1,5 @@
 angular.module('learned', ['ngRoute', 
-                           'appRoutes', 
+                           'appRoutes',
 						   'Main', 
                            'MemoryService',
                            'AdditionService',

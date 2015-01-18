@@ -21,37 +21,21 @@
 		<div class="ipad container-fluid">
 
 			<!-- HEADER -->
-			<nav class="navbar navbar-inverse">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">Learn-Ed</a>
-				</div>
-				<ul class="nav navbar-nav">
-					<li><a href="/math">Math</a></li>
-					<li><a href="/spelling">Spelling</a></li>
-					<li><a href="/reading">Reading</a></li>
-					<li><a href="/games">Games</a></li>
-					<li><a href="/videos">YouTube</a></li>
-				</ul>
-			</nav>
-            <!--<div ng-controller="BottomSheetExample">
+            <div class="menu-height">
                 <div class="bottom-sheet-demo inset" layout="column" layout-sm="row" layout-align="center">
                     <md-button class="md-primary" ng-click="showGridBottomSheet($event)">
-                        Show as Grid
+                        Menu
                     </md-button>
                 </div>
-                <br />
-                <b layout="row" layout-align="center center" layout-margin>
-                    {{alert}}
-                </b>
-            </div>-->
-
+            </div>
+            <br />
 			<!-- ANGULAR DYNAMIC CONTENT -->
 			<div ng-view class="app-play-area"></div>
 		</div>
 	</body>
 
 <script type="text/ng-template" id="bottom-sheet-grid-template.html">
-    <md-bottom-sheet class="md-grid">
+    <md-bottom-sheet class="md-grid main-menu-grid">
         <md-list>
             <md-item ng-repeat="item in items">
                 <md-button class="md-grid-item-content" aria-label="{{item.name}}" ng-click="listItemClick($index)">
@@ -84,7 +68,6 @@
 <!-- ANGULAR CUSTOM -->
 <script src="js/services/AdditionService.js"></script>
 <script src="js/services/MemoryService.js"></script>
-<script src="js/controllers/NavigationController.js"></script>
 <script src="js/controllers/GameController.js"></script>
 <script src="js/controllers/MainController.js"></script>
 <script src="js/controllers/MathController.js"></script>
