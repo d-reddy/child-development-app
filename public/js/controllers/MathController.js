@@ -4,21 +4,21 @@ angular.module('Math', []).controller('MathController', function($scope) {
             id: 'addFlash',
             img: '/img/addition.jpg',
             action: function () {
-               location.href = location.href + 'math/addition';
+               location.href = '/math/addition';
             }
         },
         {
             id: 'subtractFlash',
             img: '/img/construction.jpg',
             action: function () {
-                location.href = location.href + 'math/subtraction';
+                location.href = '/math/subtraction';
             }
         },
         {
             id: 'multiplicationFlash',
             img: '/img/construction.jpg',
             action: function () {
-                location.href = location.href + 'math/multiplication';
+                location.href = '/math/multiplication';
             }
         }
     ]

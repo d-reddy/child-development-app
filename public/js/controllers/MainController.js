@@ -1,6 +1,5 @@
-angular.module('Main', ['ngMaterial']).controller('MainController', function($scope, $timeout, $mdBottomSheet) {
+angular.module('Main', ['ngMaterial','ngTouch']).controller('MainController', function($scope, $timeout, $mdBottomSheet) {
     $scope.title = 'Menu';
-    alert('this works');
     $scope.showGridBottomSheet = function ($event) {
         $scope.alert = '';
         $mdBottomSheet.show({
@@ -15,19 +14,17 @@ angular.module('Main', ['ngMaterial']).controller('MainController', function($sc
 .controller('GridBottomSheetCtrl', function ($scope, $mdBottomSheet) {
     $scope.items = [
         { name: 'Home', icon: 'hangout', location: '/' },
-        { name: 'Math', icon: 'mail', location: 'math' },
-        { name: 'Spelling', icon: 'message', location: 'spelling' },
-        { name: 'Reading', icon: 'copy', location: 'reading' },
-        { name: 'Games', icon: 'facebook', location: 'games' },
-        { name: 'YouTube', icon: 'twitter', location: 'video' },
+        { name: 'Math', icon: 'mail', location: '/math' },
+        { name: 'Spelling', icon: 'message', location: '/spelling' },
+        { name: 'Reading', icon: 'copy', location: '/reading' },
+        { name: 'Games', icon: 'facebook', location: '/games' },
+        { name: 'YouTube', icon: 'twitter', location: '/video' },
     ];
     $scope.listItemClick = function ($index) {
 
         var clickedItem = $scope.items[$index];
         alert('test');
         $mdBottomSheet.hide(clickedItem);
-        alert('test1');
-
-        location.href = location.href + clickedItem.location;
+        location.href = clickedItem.location;
     };
 });;
