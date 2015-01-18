@@ -21,8 +21,12 @@ angular.module('Main', ['ngMaterial']).controller('MainController', function($sc
         { name: 'YouTube', icon: 'twitter', location: 'video' },
     ];
     $scope.listItemClick = function ($index) {
+
         var clickedItem = $scope.items[$index];
+        alert('test');
         $mdBottomSheet.hide(clickedItem);
+        alert('test1');
+
         location.href = location.href + clickedItem.location;
     };
 });;
