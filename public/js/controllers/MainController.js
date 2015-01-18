@@ -23,6 +23,6 @@ angular.module('Main', ['ngMaterial']).controller('MainController', function($sc
     $scope.listItemClick = function ($index) {
         var clickedItem = $scope.items[$index];
         $mdBottomSheet.hide(clickedItem);
-        window.location.href = clickedItem.location;
+        location.href = clickedItem.location;
     };
 });;
