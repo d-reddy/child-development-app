@@ -1,5 +1,6 @@
 ﻿<html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"> 
     <meta charset="UTF-8">
     <base href="/">
 
@@ -32,19 +33,45 @@
 					<li><a href="/videos">YouTube</a></li>
 				</ul>
 			</nav>
+            <!--<div ng-controller="BottomSheetExample">
+                <div class="bottom-sheet-demo inset" layout="column" layout-sm="row" layout-align="center">
+                    <md-button class="md-primary" ng-click="showGridBottomSheet($event)">
+                        Show as Grid
+                    </md-button>
+                </div>
+                <br />
+                <b layout="row" layout-align="center center" layout-margin>
+                    {{alert}}
+                </b>
+            </div>-->
 
 			<!-- ANGULAR DYNAMIC CONTENT -->
 			<div ng-view class="app-play-area"></div>
 		</div>
 	</body>
 
+<script type="text/ng-template" id="bottom-sheet-grid-template.html">
+    <md-bottom-sheet class="md-grid">
+        <md-list>
+            <md-item ng-repeat="item in items">
+                <md-button class="md-grid-item-content" aria-label="{{item.name}}" ng-click="listItemClick($index)">
+                    <div class="md-icon-container">
+                        <md-inline-grid-icon icon="{{item.icon}}"></md-inline-grid-icon>
+                    </div>
+                    <p class="md-grid-text"> {{ item.name }} </p>
+                </md-button>
+            </md-item>
+        </md-list>
+    </md-bottom-sheet>
+</script>
+
 <!-- JS thirdparty-->
 <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
 <script src="jquery/dist/jquery.min.js"></script>
-<script src="angular/angular.min.js"></script>
+<script src="angular/angular.js"></script>
 <script src="angular-route/angular-route.min.js"></script>
 <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="angular-material/angular-material.min.js"></script>
+<script src="angular-material/angular-material.js"></script>
 <script src="angular-animate/angular-animate.min.js"></script>
 <script src="angular-aria/angular-aria.min.js"></script>
 <script src="underscore/underscore-min.js"></script>
@@ -57,6 +84,7 @@
 <!-- ANGULAR CUSTOM -->
 <script src="js/services/AdditionService.js"></script>
 <script src="js/services/MemoryService.js"></script>
+<script src="js/controllers/NavigationController.js"></script>
 <script src="js/controllers/GameController.js"></script>
 <script src="js/controllers/MainController.js"></script>
 <script src="js/controllers/MathController.js"></script>
