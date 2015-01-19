@@ -1,19 +1,21 @@
-angular.module('Memory', []).controller('MemoryController', function ($scope, memory) {
+angular.module('Memory', []).controller('MemoryController', function ($scope, $route, memory) {
     
-    memory.initialize(12);
+    var result = memory.initialize(12);
 
-	$scope.cards = memory.cards;
+	$scope.cards = result.cards;
 
     $scope.cardClick = function (card, $event) {
         
         if (memory.canClick(card)) {
             memory.cardClick(card);
             setTimeout(function () {
-                memory.evaluate();
+                var win = memory.evaluate();
                 $scope.$apply();
 
-                if (memory.win) {
-	                
+                if (win) {
+                    setTimeout(function () {
+                        $route.reload();
+                    }, 1200);
                 }
 
             }, 3000);

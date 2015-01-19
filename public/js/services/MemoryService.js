@@ -39,7 +39,9 @@ angular.module('MemoryService', []).factory('memory', ['$http', function($http) 
             
             if (completeCards.length == self.cards.length) {
 	            self.win = true;
-            }    
+            }
+            
+            return self.win;    
         }
 
         self.canClick = function (card) {
@@ -79,22 +81,28 @@ angular.module('MemoryService', []).factory('memory', ['$http', function($http) 
             return array;
 	    };
 
-        self.initialize =  function(numberOfCards) {
+        self.initialize = function (numberOfCards) {
+            self.win = false;
+            self.cards = [];
             if (numberOfCards % 4 !== 0) {
                 throw "Invalid number of initialization cards.  Count must be even.";
             } 
             else {
-                for (var i = 0; i < numberOfCards/2; i++) {
+                for (var i = 0; i < numberOfCards / 2; i++) {
                     self.cards.push(new self.Card(i));
                 }
-
+                
                 for (var i = numberOfCards / 2, j = 0; i < numberOfCards; i++, j++) {
                     self.cards.push(new self.Card(j));
                 }
                 
                 //randomize the cards
-	            self.cards = self.shuffle(self.cards);
+                self.cards = self.shuffle(self.cards);
             }
+            
+            return{
+                cards: self.cards
+            };
           
         };
 

@@ -4,13 +4,35 @@ angular.module('AdditionService', []).factory('addition', ['$http', function($ht
 
 	    self.win = false;
 
-        self.num1 = Math.round(Math.random() * 20) + 1;;
-    	self.num2 = Math.round(Math.random() * 20) + 1;
+        self.num1 = 0;
+    	self.num2 = 0;
     	self.choices = [];
-
-       
-        self.choices.push(self.num1 + self.num2);
         
+        self.initialize = function () {
+            self.num1 = Math.round(Math.random() * 20) + 1;
+            self.num2 = Math.round(Math.random() * 20) + 1;
+            self.choices = [];
+            self.choices.push(self.num1 + self.num2);
+
+            for (var i = 0; i < 3;) {
+                var wrongChoice = Math.round(Math.random() * 99) + 1;
+                
+                //if not answer and not in array already then add to array
+                if (wrongChoice != (self.num1 + self.num2) && self.choices.indexOf(wrongChoice) == -1) {
+                    self.choices.push(wrongChoice);
+                    i++;
+                }
+            }
+            
+            self.choices = self.shuffle(self.choices);
+
+            return {
+                num1: self.num1,
+                num2: self.num2,
+                choices: self.choices
+            };
+        }
+
         self.shuffle = function (array) {
             var currentIndex = array.length, temporaryValue, randomIndex;
             
@@ -30,18 +52,6 @@ angular.module('AdditionService', []).factory('addition', ['$http', function($ht
             return array;
         };
 
-        for (var i = 0; i < 3;) {
-	        var wrongChoice = Math.round(Math.random() * 99) + 1;
-                
-            //if not answer and not in array already then add to array
-            if (wrongChoice != (self.num1 + self.num2) && self.choices.indexOf(wrongChoice) == -1) {
-                self.choices.push(wrongChoice);
-	            i++;
-            }
-        }
-        
-        self.choices = self.shuffle(self.choices);
-
 	    self.evaluate = function(choice) {
             if (choice == (self.num1 + self.num2)) {
 	            self.win = true;
@@ -52,15 +62,7 @@ angular.module('AdditionService', []).factory('addition', ['$http', function($ht
 		    return self.win;
         };
         
-        self.initialize = function() {
-	       
-             
-        }
-        
        return {
-            num1: self.num1,
-            num2: self.num2,
-            choices: self.choices,
             evaluate: self.evaluate,
             initialize: self.initialize
         };
