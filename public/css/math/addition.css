@@ -1,8 +1,30 @@
+.addition .flip {
+   width: 75px;
+   height: 67px;
+}
+
 .addition .number {
   font-size: 140px;
 }
 
+.addition .num-height {
+   height: 268px;
+}
+
+
 .addition .choice {
-  font-size: 100px;
+  font-size: 35px;
   width: 200px;
+  cursor: pointer;
+}
+
+.addition hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-color: blue;
+
+}
+
+.addition .burfder {
+	background-image: url('/img/burfder.jpg');
 }

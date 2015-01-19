@@ -6,7 +6,7 @@
    width: 200px;
    height: 200px;
    position: relative;
-   margin: 10px;
+   /*margin: 10px;*/
 }
 
 .flip .card.flipped {
@@ -60,7 +60,7 @@
 .flip .card .back {
   color: black;
   cursor: pointer;
-  background-color: blue;
+  background-color: #e0dede;
 	    
   transform:rotatey(-180deg);
   -ms-transform:rotatey(-180deg); /* IE 9 */

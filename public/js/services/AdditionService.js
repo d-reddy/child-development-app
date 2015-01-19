@@ -4,63 +4,14 @@ angular.module('AdditionService', []).factory('addition', ['$http', function($ht
 
 	    self.win = false;
 
-        self.cards = [];
+        self.num1 = Math.round(Math.random() * 20) + 1;;
+    	self.num2 = Math.round(Math.random() * 20) + 1;
+    	self.choices = [];
 
-        self.Card = function(picIndex) {
-	        return {
-		        flipped: false,
-                srcImg: 'img' + picIndex,
-                complete: false
-	        };
-        };
+       
+        self.choices.push(self.num1 + self.num2);
         
-        self.evaluate = function () {
-            //run through the game logic
-            var flippedCards = _.filter(self.cards, function (val) {
-                return val.flipped && !val.complete;
-            });
-            
-            //have 2 cards been flipped?
-            if (flippedCards.length == 2) {
-                if (flippedCards[0].srcImg == flippedCards[1].srcImg) {
-                    flippedCards[0].complete = true;
-                    flippedCards[1].complete = true;
-	                flippedCards[0].srcImg = 'done';
-	                flippedCards[1].srcImg = 'done';
-                } else {
-                    flippedCards[0].flipped = false;
-                    flippedCards[1].flipped = false;
-                }
-            }
-            
-            var completeCards = _.filter(self.cards, function (val) {
-                return val.complete;
-            });
-            
-            if (completeCards.length == self.cards.length) {
-	            self.win = true;
-            }    
-        }
-
-        self.canClick = function (card) {
-            
-            if (card.complete) {
-                return false;
-            }
-
-		    //run through the game logic
-		    var flippedCards = _.filter(self.cards, function(val) {
-			    return val.flipped && !val.complete;
-		    });
-
-		    return flippedCards.length < 2;
-	    };
-
-        self.cardClick = function (card) {
-            card.flipped = !card.flipped;
-        };
-
-	    self.shuffle = function(array) {
+        self.shuffle = function (array) {
             var currentIndex = array.length, temporaryValue, randomIndex;
             
             // While there remain elements to shuffle...
@@ -77,33 +28,40 @@ angular.module('AdditionService', []).factory('addition', ['$http', function($ht
             }
             
             return array;
-	    };
-
-        self.initialize =  function(numberOfCards) {
-            if (numberOfCards % 4 !== 0) {
-                throw "Invalid number of initialization cards.  Count must be even.";
-            } 
-            else {
-                for (var i = 0; i < numberOfCards/2; i++) {
-                    self.cards.push(new self.Card(i));
-                }
-
-                for (var i = numberOfCards / 2, j = 0; i < numberOfCards; i++, j++) {
-                    self.cards.push(new self.Card(j));
-                }
-                
-                //randomize the cards
-	            self.cards = self.shuffle(self.cards);
-            }
-          
         };
 
-        return {
-            cards: self.cards,
-            initialize: self.initialize,
-            cardClick: self.cardClick,
+        for (var i = 0; i < 3;) {
+	        var wrongChoice = Math.round(Math.random() * 99) + 1;
+                
+            //if not answer and not in array already then add to array
+            if (wrongChoice != (self.num1 + self.num2) && self.choices.indexOf(wrongChoice) == -1) {
+                self.choices.push(wrongChoice);
+	            i++;
+            }
+        }
+        
+        self.choices = self.shuffle(self.choices);
+
+	    self.evaluate = function(choice) {
+            if (choice == (self.num1 + self.num2)) {
+	            self.win = true;
+            } else {
+                self.win = false;
+            }
+
+		    return self.win;
+        };
+        
+        self.initialize = function() {
+	       
+             
+        }
+        
+       return {
+            num1: self.num1,
+            num2: self.num2,
+            choices: self.choices,
             evaluate: self.evaluate,
-            canClick: self.canClick,
-            win: self.win
+            initialize: self.initialize
         };
 }]);
