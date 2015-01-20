@@ -39,6 +39,10 @@
     <Content Include="public\lib\angular-touch\bower.json" />
     <Content Include="public\lib\angular-touch\package.json" />
     <Content Include="public\lib\angular-touch\README.md" />
+    <Content Include="public\lib\fastclick\.bower.json" />
+    <Content Include="public\lib\fastclick\bower.json" />
+    <Content Include="public\lib\fastclick\LICENSE" />
+    <Content Include="public\lib\fastclick\README.md" />
     <Content Include="public\lib\underscore\.bower.json" />
     <Content Include="public\lib\underscore\.eslintrc" />
     <Content Include="public\lib\underscore\.gitignore" />
@@ -59,6 +63,7 @@
     <Compile Include="public\lib\angular-touch\angular-touch.js" />
     <Compile Include="public\lib\angular-touch\angular-touch.min.js" />
     <Compile Include="public\lib\angular-touch\index.js" />
+    <Compile Include="public\lib\fastclick\lib\fastclick.js" />
     <Compile Include="public\lib\underscore\underscore-min.js" />
     <Compile Include="public\lib\underscore\underscore.js" />
     <Compile Include="server.js" />
@@ -599,6 +604,8 @@
     <Folder Include="public\lib\bootstrap\js" />
     <Folder Include="public\lib\bootstrap\less" />
     <Folder Include="public\lib\bootstrap\less\mixins" />
+    <Folder Include="public\lib\fastclick\" />
+    <Folder Include="public\lib\fastclick\lib\" />
     <Folder Include="public\lib\hammerjs" />
     <Folder Include="public\lib\jquery" />
     <Folder Include="public\lib\jquery\dist" />
