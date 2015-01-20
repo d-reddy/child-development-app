@@ -1,2 +1,5 @@
-angular.module('Main', []).controller('MainController', function($scope) {
+angular.module('Main', []).controller('MainController', function ($scope) {
+    document.ontouchmove = function (event) {
+        event.preventDefault();
+    }
 });

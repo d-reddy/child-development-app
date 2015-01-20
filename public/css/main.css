@@ -1,4 +1,5 @@
 #mainapp {
+    -webkit-user-select: none;
     padding-top:0;
 }
 
