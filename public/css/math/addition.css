@@ -1,6 +1,6 @@
 .addition .flip {
-   width: 75px;
-   height: 67px;
+   width: 68px;
+   height: 61px;
 }
 
 .addition .number {
@@ -8,7 +8,7 @@
 }
 
 .addition .num-height {
-   height: 268px;
+   height: 245px;
 }
 
 
@@ -27,4 +27,11 @@
 
 .addition .burfder {
 	background-image: url('/img/burfder.jpg');
+}
+
+.addition .flip .card .back {
+  background-color: transparent;
+}
+.addition .flip .card .back p {
+    margin-top: -15px;
 }

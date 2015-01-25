@@ -46,7 +46,7 @@ angular.module('MemoryService', []).factory('memory', ['$http', function($http) 
 
         self.canClick = function (card) {
             
-            if (card.complete) {
+            if (card.complete || card.flipped) {
                 return false;
             }
 

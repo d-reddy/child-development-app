@@ -13,7 +13,7 @@
 				<div class="row">
 					<div class="col-xs-2 co2-md-2 col-lg-2" ng-repeat="n in range1">
 						<div class="flip">
-							<div class="card" ng-click="burfderClick(card, $event)">
+							<div class="card" ng-click="burfderClick(card, $event, $index, 'num1')">
 								<div class="face front burfder"></div>
 								<div class="face back">
 									<p style="text-align:center;"></p>
@@ -40,7 +40,7 @@
 				<div class="row">
 					<div class="col-xs-2 co2-md-2 col-lg-2" ng-repeat="n in range2">
 						<div class="flip">
-							<div class="card" ng-click="burfderClick(card, $event)">
+							<div class="card" ng-click="burfderClick(card, $event, $index, 'num2')">
 								<div class="face front burfder"></div>
 								<div class="face back">
 									<p style="text-align:center;"></p>
