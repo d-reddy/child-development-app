@@ -1,0 +1,35 @@
+#box {
+    width: 100px;
+    height: 100px;
+    background: green;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    cursor: move;
+}
+
+#grid {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#grid div {
+    width: 98px;
+    height: 98px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+
+div#box.dropped {
+    background: silver;
+}
+
+div#grid.focus {
+    border: 1px solid red;
+}
+

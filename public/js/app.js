@@ -3,11 +3,13 @@ angular.module('learned', ['ngRoute',
 						   'Main', 
                            'MemoryService',
                            'AdditionService',
+                           'PuzzleService',
 						   'Spelling', 
 						   'Reading', 
 						   'Game',
 						   'Video',
                            'Memory',
                            'Math',
-                           'Addition'
+                           'Addition',
+                           'Puzzle'
 						   ]);

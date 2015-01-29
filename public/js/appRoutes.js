@@ -38,6 +38,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'MemoryController'
         })
 
+        .when('/games/puzzle', {
+            templateUrl: 'views/games/puzzle.html',
+            controller: 'PuzzleController'
+        })
+
 		.when('/videos', {
 			templateUrl: 'views/default.html',
 			controller: 'VideoController'	

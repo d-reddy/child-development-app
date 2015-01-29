@@ -8,10 +8,10 @@ angular.module('Game', []).controller('GameController', function($scope) {
             }
         },
         {
-            id: 'inprog1',
-            img: '/img/construction.jpg',
+            id: 'puzzle',
+            img: '/img/puzzle.jpg',
             action: function (){
-               location.href = '/games/inprog1';
+               location.href = '/games/puzzle';
             }
         },
         {
