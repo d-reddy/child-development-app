@@ -1,31 +1,33 @@
-#box {
+.box {
     width: 100px;
     height: 100px;
     background: green;
-    position: relative;
-    top: 0;
-    left: 0;
+    position: absolute;
     z-index: 9999;
     cursor: move;
+    background-repeat: no-repeat;
+    display: inline-block;
+    border: 1px solid #808080;
+    top:360px;
 }
 
 #grid {
-    width: 300px;
-    height: 300px;
+    width: 302px;
+    height: 302px;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 #grid div {
-    width: 98px;
-    height: 98px;
+    width: 100px;
+    height: 100px;
     border: 1px solid #ccc;
     float: left;
 }
 
 
-div#box.dropped {
+div.box.dropped {
     background: silver;
 }
 
@@ -33,3 +35,8 @@ div#grid.focus {
     border: 1px solid red;
 }
 
+.puzzle hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid silver;
+}

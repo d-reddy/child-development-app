@@ -1,10 +1,8 @@
 <link rel="stylesheet" href="games/puzzle.css">
 
 <div>
-    <div class="puzzle">
-        <div id="box"></div>
-
-        <div id="grid">
+    <div class="puzzle" style="position:relative;height:600px">
+        <div id="grid" style="position:absolute;">
             <div id="a"></div>
             <div id="b"></div>
             <div id="c"></div>
@@ -15,5 +13,19 @@
             <div id="h"></div>
             <div id="i"></div>
         </div>
+        <div style="position:absolute; background-image: url(/img/puzzles/img0.jpg); height:300px; width:300px; left: 600px;">
+        </div>
+        <hr style="position:absolute;top:320px;" />
+
+        <!--<div id="box" style="position:absolute;top:360px; background-image: url(/img/puzzles/img0.jpg); background-position: 10px 25px; height:100px; width:100px; background-repeat: no-repeat;"></div>-->
+
+        <!--<div style="width:100%;">-->
+        <div class="box" ng-repeat="piece in pieces"
+             ng-style="{'background-image': 'url(/img/puzzles/' + $parent.img + '.jpg)', 'background-position': -piece.clipLeft + ' ' + -piece.clipTop, 'position':'absolute', 'left': $index*100 }">
+        </div>
+        <!--</div>-->
     </div>
 </div>
+
+<!--style="position:absolute;top:360px; background-image: url(/img/puzzles/img0.jpg); clip: rect(0, 100px, 100px, 0);"-->
+<!--, 'left': $index*100-->
