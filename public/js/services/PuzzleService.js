@@ -10,7 +10,7 @@ angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) 
         self.GridSpace = function(index) {
             return {
                 index: index,
-                occupiedPiece: null
+                occupiedPieces: []
             }
         }
 

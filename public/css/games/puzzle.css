@@ -3,7 +3,7 @@
     height: 100px;
     background: green;
     position: absolute;
-    z-index: 9999;
+    /*z-index: 9999;*/
     cursor: move;
     background-repeat: no-repeat;
     display: inline-block;
@@ -29,10 +29,6 @@
 
 div.box.dropped {
     background: silver;
-}
-
-div#grid.focus {
-    border: 1px solid red;
 }
 
 .puzzle hr {

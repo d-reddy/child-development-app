@@ -8,59 +8,59 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
         $scope.pieces = values.pieces;
         $scope.img = values.img;
     }();
-
-    $(function () {
-        
-        $(document).on('document.update.learned', function () {
-            
-            $('.box').each(function () {
-                var innerSelf = $(this);
-                
-                if (innerSelf.data("box-setup")) {
-                    return;
-                }
-                
-                innerSelf.data("box-setup", true);
-                
-                innerSelf.draggable();
-            });
-            
-            $('div', '#grid').each(function () {
-                var innerSelf = $(this);
-                
-                if (innerSelf.data("grid-setup")) {
-                    return;
-                }
-                
-                innerSelf.data("grid-setup", true);
-                
-                innerSelf.droppable({
-                    drop: function (event, ui) {
-                        $(ui.draggable).addClass('dropped').
-                        css({
-                            top: innerSelf.position().top + 20,
-                            left: innerSelf.position().left + 100
-                        });
-                    }
-                });
-            });
-      
-        });
-    });
-
-    //$('#box').draggable();
     
-    //$('div', '#grid').each(function () {
-    //    var $div = $(this);
-    //    $div.droppable({
-    //        drop: function (event, ui) {
-    //            $(ui.draggable).addClass('dropped').
-    //            css({
-    //                top: $div.position().top+20,
-    //                left: $div.position().left+100
-    //            });
-    //            //$('#grid').addClass('focus');
-    //        }
-    //    });
-    //});
+    $scope.handleDrop = function(scope, args) {
+        var innerSelf = $(scope.target);
+        
+        //seems dirty
+        var gridSpace = angular.element(scope.target).data().$scope ? angular.element(scope.target).data().$scope.gridSpace : null;
+        var piece = angular.element(args.draggable).data().$scope ? angular.element(args.draggable).data().$scope.piece : null;
+        
+        if (gridSpace && piece) {
+            gridSpace.occupiedPieces.push(piece);
+            
+            if (gridSpace.occupiedPieces.length == 1) {
+                $(scope.toElement).addClass('dropped').
+                css({
+                    top: innerSelf.position().top + 20,
+                    left: innerSelf.position().left + 100
+                });
+            } else {
+                $(scope.toElement).addClass('dropped').
+                css({
+                    top: innerSelf.position().top + 20 + gridSpace.occupiedPieces.length,
+                    left: innerSelf.position().left + 100 + gridSpace.occupiedPieces.length,
+                }).zIndex(self.maxZIndex());
+            
+            }
+            
+        }
+    }
+
+    $scope.handleOnOut = function(scope, args) {
+        var gridSpace = angular.element(scope.target).data().$scope ? angular.element(scope.target).data().$scope.gridSpace : null;
+        var piece = angular.element(args.draggable).data().$scope ? angular.element(args.draggable).data().$scope.piece : null;
+
+        if (gridSpace && piece) {
+
+            gridSpace.occupiedPieces = _.filter(gridSpace.occupiedPieces, function(gridPiece) {
+                return gridPiece.index !== piece.index;
+            });
+        }
+
+    };
+
+    self.maxZIndex = function() {
+        var best;
+        var maxz;
+        $('.box').each(function() {
+            var z = parseInt($(this).css('z-index'), 10);
+            if (!best || maxz < z) {
+                best = this;
+                maxz = z;
+            }
+        });
+
+        return maxz;
+    };
 });

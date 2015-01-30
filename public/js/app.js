@@ -1,5 +1,6 @@
 angular.module('learned', ['ngRoute', 
                            'appRoutes',
+                           'ngDragDrop',
 						   'Main', 
                            'MemoryService',
                            'AdditionService',
