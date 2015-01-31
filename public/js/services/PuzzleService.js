@@ -56,7 +56,7 @@ angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) 
             return {
                 pieces: self.pieces,
                 gridSpaces: self.gridSpaces,
-                img: 'img0' //eventually randomize this (pull random image from 300 directory for example)
+                img: 'img1' //eventually randomize this (pull random image from 300 directory for example)
             };
         }
 

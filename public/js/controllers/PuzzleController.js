@@ -23,13 +23,13 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
                 $(scope.toElement).addClass('dropped').
                 css({
                     top: innerSelf.position().top + 20,
-                    left: innerSelf.position().left + 100
+                    left: innerSelf.position().left + 40
                 });
             } else {
                 $(scope.toElement).addClass('dropped').
                 css({
                     top: innerSelf.position().top + 20 + gridSpace.occupiedPieces.length,
-                    left: innerSelf.position().left + 100 + gridSpace.occupiedPieces.length,
+                    left: innerSelf.position().left + 40 + gridSpace.occupiedPieces.length,
                     'z-index' : self.maxZIndex()
                 });
             

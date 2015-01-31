@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="games/puzzle.css">
 
 <div>
-    <div class="puzzle" style="position:relative;height:600px">
-        <div id="grid" style="position:absolute;">
+    <div class="puzzle" style="position:relative;height:600px;">
+        <div id="grid" style="position: absolute; background-image: url(/img/puzzles/img1.jpg);opacity:.1;">
             <div ng-repeat="gridSpace in gridSpaces" data-drop="true" jqyoui-droppable="{ onDrop: 'handleDrop', onOut:'handleOnOut' }"></div>
         </div>
-        <div style="position:absolute; background-image: url(/img/puzzles/img0.jpg); height:300px; width:300px; left: 600px;">
+        <div style="position:absolute; background-image: url(/img/puzzles/img1.jpg); height:300px; width:300px; left: 600px;margin-top:20px;">
         </div>
         <hr style="position:absolute;top:320px;" />
         <div class="box" ng-repeat="piece in pieces"
-             ng-style="{'background-image': 'url(/img/puzzles/' + $parent.img + '.jpg)', 'background-position': -piece.clipLeft + ' ' + -piece.clipTop, 'position':'absolute', 'left': $index*100 }"
+             ng-style="{'background-image': 'url(/img/puzzles/' + $parent.img + '.jpg)', 'background-position': -piece.clipLeft + ' ' + -piece.clipTop, 'position':'absolute', 'left': $index*100,'margin-left': '60px' }"
              data-drag="true" jqyoui-draggable="{animate:true}" ng-model="piece" data-jqyoui-options="{containment:'parent'}">
         </div>
     </div>
