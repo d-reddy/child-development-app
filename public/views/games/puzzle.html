@@ -2,10 +2,10 @@
 
 <div>
     <div class="puzzle" style="position:relative;height:600px;">
-        <div id="grid" style="position: absolute; background-image: url(/img/puzzles/img1.jpg);opacity:.1;">
+        <div id="grid" ng-style="{'position':'absolute','background-image': 'url(/img/puzzles/' + img +'.jpg)', 'opacity': '.1'}">
             <div ng-repeat="gridSpace in gridSpaces" data-drop="true" jqyoui-droppable="{ onDrop: 'handleDrop', onOut:'handleOnOut' }"></div>
         </div>
-        <div style="position:absolute; background-image: url(/img/puzzles/img1.jpg); height:300px; width:300px; left: 600px;margin-top:20px;">
+        <div ng-style="{'position':'absolute', 'background-image': 'url(/img/puzzles/' + img +'.jpg)', 'height':'300px', 'width':'300px', 'left': '600px', 'margin-top':'20px'}">
         </div>
         <hr style="position:absolute;top:320px;" />
         <div class="box" ng-repeat="piece in pieces"

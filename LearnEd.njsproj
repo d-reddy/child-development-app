@@ -35,7 +35,13 @@
     <Content Include="public\img\memory\img4.jpg" />
     <Content Include="public\img\memory\img5.jpg" />
     <Content Include="public\img\puzzle.jpg" />
-    <Content Include="public\img\puzzles\img0.jpg" />
+    <Content Include="public\img\puzzles\img1.jpg" />
+    <Content Include="public\img\puzzles\img2.jpg" />
+    <Content Include="public\img\puzzles\img3.jpg" />
+    <Content Include="public\img\puzzles\img4.jpg" />
+    <Content Include="public\img\puzzles\img5.jpg" />
+    <Content Include="public\img\puzzles\img6.jpg" />
+    <Content Include="public\img\puzzles\img7.jpg" />
     <Content Include="public\img\win.jpg" />
     <Content Include="public\lib\angular-dragdrop\.bower.json" />
     <Content Include="public\lib\angular-dragdrop\bower.json" />
