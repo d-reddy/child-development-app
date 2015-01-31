@@ -34,6 +34,11 @@ angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) 
         };
         
         self.initialize = function (length, width) {
+            
+            self.win = false;
+            self.gridSpaces = [];
+            self.pieces = [];
+
             if (length !== width) {
                 throw "Must be a square image.";
             }
@@ -81,8 +86,24 @@ angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) 
 
 	    self.evaluate = function(choice) {
             
+            var correctGridSpaces = _.filter(self.gridSpaces, function (gridSpace) {
+                if (gridSpace.occupiedPieces.length == 1) {
+                    if (gridSpace.occupiedPieces[0].index == gridSpace.index) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+                return false;
+            });
+            
+            if (correctGridSpaces.length == self.pieces.length) {
+                self.win = true;
+            } else {
+                self.win = false;
+            }
 
-		    return self.win;
+            return self.win;
         };
         
        return {

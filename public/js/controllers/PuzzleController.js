@@ -35,6 +35,15 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
             
             }
             
+            if (puzzle.evaluate()) {
+                $scope.img = 'win';
+                $('.box').hide();
+
+                setTimeout(function () {
+                    $route.reload();
+                }, 3000);
+            }
+
         }
     }
 
