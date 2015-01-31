@@ -7,13 +7,28 @@ angular.module('Main', []).controller('MainController', function ($scope) {
         FastClick.attach(document.body);
     });
 
-    $(function () {
-        function reorient(e) {
-            var portrait = (window.orientation % 180 == 0);
-            $("body > div").css("-webkit-transform", portrait ? "rotate(-90deg)" : "");
-        }
-        window.onorientationchange = reorient;
-        window.setTimeout(reorient, 0);
+    $(document).ready(function () {
+        $(window)
+          .bind('orientationchange', function () {
+            if (window.orientation) {
+                if (window.orientation % 180 != 0) {
+                    $(document.body).css("-webkit-transform-origin", "")
+                       .css("-webkit-transform", "");
+                } 
+                else {
+                    if (window.orientation > 0) { //clockwise
+                        $(document.body).css("-webkit-transform-origin", "200px 190px")
+                       .css("-webkit-transform", "rotate(-90deg)");
+                    }
+                    else {
+                        $(document.body).css("-webkit-transform-origin", "280px 190px")
+                       .css("-webkit-transform", "rotate(90deg)");
+                    }
+                }
+            }
+          
+        })
+          .trigger('orientationchange');
     });
 
     //var iframe = document.createElement('iframe');
