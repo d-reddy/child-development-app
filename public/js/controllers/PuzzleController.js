@@ -30,7 +30,8 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
                 css({
                     top: innerSelf.position().top + 20 + gridSpace.occupiedPieces.length,
                     left: innerSelf.position().left + 100 + gridSpace.occupiedPieces.length,
-                }).zIndex(self.maxZIndex());
+                    'z-index' : self.maxZIndex()
+                });
             
             }
             
@@ -61,6 +62,6 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
             }
         });
 
-        return maxz;
+        return maxz+1;
     };
 });

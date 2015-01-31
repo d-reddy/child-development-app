@@ -3,7 +3,7 @@
     height: 100px;
     background: green;
     position: absolute;
-    /*z-index: 9999;*/
+    z-index: 1;
     cursor: move;
     background-repeat: no-repeat;
     display: inline-block;
