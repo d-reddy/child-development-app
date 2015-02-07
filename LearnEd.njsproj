@@ -42,6 +42,7 @@
     <Content Include="public\img\puzzles\img5.jpg" />
     <Content Include="public\img\puzzles\img6.jpg" />
     <Content Include="public\img\puzzles\img7.jpg" />
+    <Content Include="public\img\refresh.jpg" />
     <Content Include="public\img\win.jpg" />
     <Content Include="public\lib\angular-dragdrop\.bower.json" />
     <Content Include="public\lib\angular-dragdrop\bower.json" />

@@ -1,12 +1,15 @@
 angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) {
         
         var self = this;
-
-	    self.win = false;
+        
+        self.numPuzzles = 7;
+        self.win = false;
+        self.puzzleIndex = (Math.round(Math.random() * (self.numPuzzles-1)));
         
         self.pieces = [];
         self.gridSpaces = [];
-        
+        self.img = 'img' + self.puzzleIndex;
+
         self.GridSpace = function(index) {
             return {
                 index: index,
@@ -61,7 +64,7 @@ angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) 
             return {
                 pieces: self.pieces,
                 gridSpaces: self.gridSpaces,
-                img: 'img' + (Math.round(Math.random() * 7) + 1)
+                img: self.img
             };
         }
 
@@ -106,8 +109,19 @@ angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) 
             return self.win;
         };
         
+        self.nextPuzzle = function (){
+            self.puzzleIndex++;
+
+            if (self.puzzleIndex > (self.numPuzzles-1)) {
+                self.puzzleIndex = 0;
+            }
+
+            return self.puzzleIndex;
+        }
+        
        return {
             evaluate: self.evaluate,
-            initialize: self.initialize
+            initialize: self.initialize,
+            nextPuzzle: self.nextPuzzle
         };
 }]);

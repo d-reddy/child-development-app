@@ -36,3 +36,22 @@ div.box.dropped {
     border: 0;
     border-top: 1px solid silver;
 }
+
+.puzzle .refresh {
+    position: absolute;
+    left:475px;
+    top:125px;
+}
+
+.puzzle button {
+    background-image: url('/img/refresh.jpg');
+    height: 48px;
+    width: 48px;
+    background-color: white;
+    border: none;
+}
+
+.puzzle button:hover {
+    background-color:white;
+    border: none;
+}

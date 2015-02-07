@@ -5,12 +5,13 @@
         <div id="grid" ng-style="{'position':'absolute','background-image': 'url(/img/puzzles/' + img +'.jpg)', 'opacity': '.1'}">
             <div ng-repeat="gridSpace in gridSpaces" data-drop="true" jqyoui-droppable="{ onDrop: 'handleDrop', onOut:'handleOnOut' }"></div>
         </div>
+        <div class="refresh"><button type="button" class="btn" ng-click="newPuzzle()"></button></div>
         <div ng-style="{'position':'absolute', 'background-image': 'url(/img/puzzles/' + img +'.jpg)', 'height':'300px', 'width':'300px', 'left': '600px', 'margin-top':'20px'}">
         </div>
         <hr style="position:absolute;top:320px;" />
         <div class="box" ng-repeat="piece in pieces"
-             ng-style="{'background-image': 'url(/img/puzzles/' + $parent.img + '.jpg)', 'background-position': -piece.clipLeft + ' ' + -piece.clipTop, 'position':'absolute', 'left': $index*100,'margin-left': '60px' }"
-             data-drag="true" jqyoui-draggable="{animate:true}" ng-model="piece" data-jqyoui-options="{containment:'parent'}">
+                ng-style="{'background-image': 'url(/img/puzzles/' + $parent.img + '.jpg)', 'background-position': -piece.clipLeft + ' ' + -piece.clipTop, 'position':'absolute', 'left': $index*100,'margin-left': '60px' }"
+                data-drag="true" jqyoui-draggable="{animate:true}" ng-model="piece" data-jqyoui-options="{containment:'parent'}">
         </div>
     </div>
 </div>

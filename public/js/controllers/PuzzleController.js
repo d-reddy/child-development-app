@@ -73,4 +73,8 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
 
         return maxz+1;
     };
+
+    $scope.newPuzzle = function (scope, args) {
+        $scope.img = 'img' + puzzle.nextPuzzle();
+    };
 });
