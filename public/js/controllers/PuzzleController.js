@@ -2,13 +2,15 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
     $scope.title = 'Puzzle Game';
     var self = this;
 
-    self.initialize = function () {
+    self.initialize = function (img) {
         var values = puzzle.initialize(300,300);
         $scope.gridSpaces = values.gridSpaces;
         $scope.pieces = values.pieces;
-        $scope.img = values.img;
-    }();
+        $scope.img = img ? img : values.img;
+    };
     
+    self.initialize();
+
     $scope.handleDrop = function(scope, args) {
         var innerSelf = $(scope.target);
         
@@ -76,5 +78,6 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
 
     $scope.newPuzzle = function (scope, args) {
         $scope.img = 'img' + puzzle.nextPuzzle();
+        self.initialize($scope.img);
     };
 });

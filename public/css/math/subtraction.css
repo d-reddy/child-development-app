@@ -1,0 +1,37 @@
+.addition .flip {
+   width: 68px;
+   height: 61px;
+}
+
+.addition .number {
+  font-size: 140px;
+}
+
+.addition .num-height {
+   height: 245px;
+}
+
+
+.addition .choice {
+  font-size: 35px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.addition hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-color: blue;
+
+}
+
+.addition .burfder {
+	background-image: url('/img/burfder.jpg');
+}
+
+.addition .flip .card .back {
+  background-color: transparent;
+}
+.addition .flip .card .back p {
+    margin-top: -15px;
+}

@@ -9,7 +9,7 @@ angular.module('Math', []).controller('MathController', function($scope) {
 		},
 		{
 			id: 'subtractFlash',
-			img: '/img/construction.jpg',
+			img: '/img/subtraction.jpg',
 			action: function() {
 				location.href = '/math/subtraction';
 			}

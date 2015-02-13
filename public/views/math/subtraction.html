@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="math/addition.css"> 
+<link rel="stylesheet" href="flip.css">
+
+<div>
+	<div class="addition">
+		<div class="row num-height">
+			<div class="col-md-4 number">
+				<div class="row">
+					<div class="col-md-offset-4 col-md-8 number">{{num1}}</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-xs-2 co2-md-2 col-lg-2" ng-repeat="n in range1">
+						<div class="flip">
+							<div class="card" ng-click="burfderClick(card, $event, $index, 'num1')">
+								<div class="face front burfder"></div>
+								<div class="face back">
+									<p style="text-align:center;"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-8">
+			</div>
+		</div>
+		<div class="row num-height">
+			<div class="col-md-4 number">
+				<div class="row">
+					<div class="col-md-4 number">-</div>
+					<div class="col-md-8 number">{{num2}}</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+			</div>
+		</div>
+        <hr />
+		<div class="row">
+			<div class="row">
+				<div class="col-xs-3 col-md-3 col-lg-3" ng-repeat="choice in choices">
+					<button type="button" data-choice class="btn btn-primary choice" ng-click="answerClick(choice, $event)">{{choice}}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

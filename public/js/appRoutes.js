@@ -18,6 +18,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'AdditionController'
         })
 
+         .when('/math/subtraction', {
+            templateUrl: 'views/math/subtraction.html',
+            controller: 'SubtractionController'
+        })
+
 		.when('/spelling', {
             templateUrl: 'views/default.html',
             controller: 'SpellingController'

@@ -54,7 +54,7 @@
   position: absolute;
   z-index: 1;
   cursor: pointer;
-  background-color: orange;
+  background-color: white;
 }
 
 .flip .card .back {
