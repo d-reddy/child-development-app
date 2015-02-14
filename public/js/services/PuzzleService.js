@@ -109,19 +109,19 @@ angular.module('PuzzleService', []).factory('puzzle', ['$http', function($http) 
             return self.win;
         };
         
-        self.nextPuzzle = function (){
+        self.newPuzzle = function (length, width){
             self.puzzleIndex++;
 
             if (self.puzzleIndex > (self.numPuzzles-1)) {
                 self.puzzleIndex = 0;
             }
 
-            return self.puzzleIndex;
+            self.img = 'img' + self.puzzleIndex;
         }
         
        return {
             evaluate: self.evaluate,
             initialize: self.initialize,
-            nextPuzzle: self.nextPuzzle
+            newPuzzle: self.newPuzzle
         };
 }]);

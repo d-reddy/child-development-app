@@ -3,17 +3,25 @@ angular.module('Subtraction', []).controller('SubtractionController', function($
     
     var self = this;
     
+    self.canClick = false;
     //self.clickableIndexG1 = 0;
     //self.clickableIndexG2 = 0;
 
     self.initialize = function () {
         var values = subtraction.initialize();
+        self.canClick = false;
         $scope.num1 = values.num1;
         $scope.num2 = values.num2;
         $scope.choices = values.choices;
         $("[data-choice]").addClass("disabled");
         $(".card").removeClass("flipped");
         $scope.counter = 1;
+
+        setTimeout(function () {
+            for (var i = 0; i < $scope.num2; i++) {
+                $('#card-' + i).fadeTo(3600, .05);
+            }
+        }, 900);
     }();
     
     //self.canClick = function (index, numId) {

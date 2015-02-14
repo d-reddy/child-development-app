@@ -2,11 +2,11 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
     $scope.title = 'Puzzle Game';
     var self = this;
 
-    self.initialize = function (img) {
+    self.initialize = function () {
         var values = puzzle.initialize(300,300);
         $scope.gridSpaces = values.gridSpaces;
         $scope.pieces = values.pieces;
-        $scope.img = img ? img : values.img;
+        $scope.img = values.img;
     };
     
     self.initialize();
@@ -42,6 +42,7 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
                 $('.box').hide();
 
                 setTimeout(function () {
+                    puzzle.newPuzzle(300, 300);
                     $route.reload();
                 }, 3000);
             }
@@ -75,9 +76,11 @@ angular.module('Puzzle', []).controller('PuzzleController', function($scope, $ro
 
         return maxz+1;
     };
-
-    $scope.newPuzzle = function (scope, args) {
-        $scope.img = 'img' + puzzle.nextPuzzle();
-        self.initialize($scope.img);
+    
+    self.newPuzzle = function (scope, args) {
+        puzzle.newPuzzle(300, 300);
+        self.initialize();
     };
+
+    $scope.newPuzzle = self.newPuzzle;
 });
