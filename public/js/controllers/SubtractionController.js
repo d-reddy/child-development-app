@@ -1,73 +1,50 @@
 angular.module('Subtraction', []).controller('SubtractionController', function($scope, $route, subtraction) {
-	$scope.counter = 1;
-    
     var self = this;
     
-    self.canClick = false;
-    //self.clickableIndexG1 = 0;
-    //self.clickableIndexG2 = 0;
+    self.canCount = false;
 
     self.initialize = function () {
         var values = subtraction.initialize();
-        self.canClick = false;
+        self.canCount = false;
         $scope.num1 = values.num1;
         $scope.num2 = values.num2;
         $scope.choices = values.choices;
         $("[data-choice]").addClass("disabled");
         $(".card").removeClass("flipped");
-        $scope.counter = 1;
+        $scope.counter = values.num2;
 
         setTimeout(function () {
             for (var i = 0; i < $scope.num2; i++) {
                 $('#card-' + i).fadeTo(3600, .05);
             }
+
+            self.canCount = true;
+
         }, 900);
     }();
     
-    //self.canClick = function (index, numId) {
-    //    if (numId === 'num1' && self.clickableIndexG1 <= ($scope.num1 - 1) && index == self.clickableIndexG1) {
-    //        self.clickableIndexG1++;
-    //        return true;
-    //    }
-    //    //else if (numId === 'num2' && self.clickableIndexG1 == $scope.num1 && self.clickableIndexG2 <= ($scope.num2 - 1) && index == self.clickableIndexG2) {
-    //    //    self.clickableIndexG2++;
-    //    //    return true;
-    //    //}
-    //    return false;
-    //};
-
     $scope.range1 = function () {
         var input = [];
         for (var i = 1; i <= $scope.num1; i += 1) input.push(i);
         return input;
     }();
-
-    //$scope.range2 = function () {
-    //    var input = [];
-    //    for (var i = 1; i <= $scope.num2; i += 1) input.push(i);
-    //    return input;
-    //}();
-
-    $scope.burfderClick = function (card, $event, $index, numId) {
-        if (self.canCount($index, numId)) {
+    
+    $scope.burfderClick = function (card, $event, $index) {
+        if (self.canCount && $index == $scope.counter) {
             var closestCard = $($event.target).closest(".card");
             if (!$(closestCard).hasClass("flipped")) {
                 closestCard.toggleClass("flipped");
-                $($event.target).next(".back").find('p:first').text($scope.counter);
+                $($event.target).next(".back").find('p:first').text($scope.counter-$scope.num2+1);
                 $scope.counter++;
             }
             
-            if ($scope.counter == (($scope.num1 - $scope.num2) + 1)) {
+            if ($scope.counter == $scope.num1) {
                 $("[data-choice]").removeClass("disabled");
                 $("[data-wrong]").addClass("disabled");
             }
         }
     };
     
-    self.canCount = function (index, numId) {
-
-    };
-
     $scope.answerClick = function (choice, $event) {
         if (subtraction.evaluate(choice)) {
             $($event.target).addClass("btn-success");
@@ -81,10 +58,7 @@ angular.module('Subtraction', []).controller('SubtractionController', function($
 
             $("[data-choice]").addClass("disabled");
             $(".card").removeClass("flipped");
-            $scope.counter = 1;
-
-            self.clickableIndexG1 = 0;
-            self.clickableIndexG2 = 0;
+            $scope.counter = $scope.num2;
         }
     }
 });
