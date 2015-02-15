@@ -14,12 +14,17 @@ angular.module('Subtraction', []).controller('SubtractionController', function($
         $scope.counter = values.num2;
 
         setTimeout(function () {
-            for (var i = 0; i < $scope.num2; i++) {
-                $('#card-' + i).fadeTo(3600, .05);
+            if ($scope.num2 > 0) {
+                for (var i = 0; i < $scope.num2; i++) {
+                    $('#card-' + i).fadeTo(3600, .05, function () {
+                        if (i == $scope.num2) {
+                            self.canCount = true;
+                        }
+                    });
+                }
+            } else {
+                self.canCount = true;
             }
-
-            self.canCount = true;
-
         }, 900);
     }();
     
@@ -46,19 +51,23 @@ angular.module('Subtraction', []).controller('SubtractionController', function($
     };
     
     $scope.answerClick = function (choice, $event) {
-        if (subtraction.evaluate(choice)) {
-            $($event.target).addClass("btn-success");
-            setTimeout(function () {
-                $route.reload();
-            }, 1000);
-        } 
-        else {
-            $($event.target).addClass("btn-danger");
-            $($event.target).attr('data-wrong', 'true');;
-
-            $("[data-choice]").addClass("disabled");
-            $(".card").removeClass("flipped");
-            $scope.counter = $scope.num2;
+        if (self.canCount) {
+            if (subtraction.evaluate(choice)) {
+                $($event.target).addClass("btn-success");
+                setTimeout(function () {
+                    $route.reload();
+                }, 1000);
+            } 
+            else {
+                $($event.target).addClass("btn-danger");
+                $($event.target).attr('data-wrong', 'true');;
+                
+                if (($scope.num1 - $scope.num2) != 0) {
+                    $("[data-choice]").addClass("disabled");
+                    $(".card").removeClass("flipped");
+                    $scope.counter = $scope.num2;
+                }
+            }
         }
     }
 });
