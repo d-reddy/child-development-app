@@ -28,6 +28,7 @@
     <Content Include="public\img\burfder.jpg" />
     <Content Include="public\img\cars_home.jpg" />
     <Content Include="public\img\construction.jpg" />
+    <Content Include="public\img\ipadAppIcon.png" />
     <Content Include="public\img\memory.jpg" />
     <Content Include="public\img\memory\cardbkg.jpg" />
     <Content Include="public\img\memory\done.jpg" />
@@ -47,6 +48,16 @@
     <Content Include="public\img\puzzles\img6.jpg" />
     <Content Include="public\img\puzzles\win.jpg" />
     <Content Include="public\img\refresh.jpg" />
+    <Content Include="public\img\shapes.jpg" />
+    <Content Include="public\img\shapes\face-01.jpg" />
+    <Content Include="public\img\shapes\face-02.jpg" />
+    <Content Include="public\img\shapes\face-03.jpg" />
+    <Content Include="public\img\shapes\face-04.jpg" />
+    <Content Include="public\img\shapes\face-05.jpg" />
+    <Content Include="public\img\shapes\face-06.jpg" />
+    <Content Include="public\img\shapes\face-07.jpg" />
+    <Content Include="public\img\shapes\face-08.jpg" />
+    <Content Include="public\img\shapes\face-09.jpg" />
     <Content Include="public\img\subtraction.jpg" />
     <Content Include="public\img\win.jpg" />
     <Content Include="public\lib\angular-dragdrop\.bower.json" />
@@ -568,8 +579,7 @@
     <Compile Include="public\js\controllers\PuzzleController.js" />
     <Compile Include="public\js\controllers\AdditionController.js" />
     <Compile Include="public\js\controllers\MemoryController.js" />
-    <Compile Include="public\js\games\puzzle\puzzle.js" />
-    <Compile Include="public\js\games\shapegroup\shapegroup.js" />
+    <Compile Include="public\js\games\games.js" />
     <Compile Include="public\js\services\ShapeGroupService.js" />
     <Compile Include="public\js\services\SubtractionService.js" />
     <Compile Include="public\js\services\PuzzleService.js" />
@@ -829,8 +839,6 @@
     <Compile Include="public\js\controllers\ReadingController.js" />
     <Compile Include="public\js\controllers\SpellingController.js" />
     <Compile Include="public\js\controllers\VideoController.js" />
-    <Compile Include="public\js\games\games.js" />
-    <Compile Include="public\js\games\memory\memory.js" />
     <Content Include="public\lib\angular\angular-csp.css" />
     <Content Include="public\lib\angular\.bower.json" />
     <Content Include="public\lib\angular\bower.json" />
@@ -1268,12 +1276,10 @@
     <Folder Include="public\img" />
     <Folder Include="public\img\memory\" />
     <Folder Include="public\img\puzzles\" />
+    <Folder Include="public\img\shapes\" />
     <Folder Include="public\js" />
     <Folder Include="public\js\controllers" />
     <Folder Include="public\js\games" />
-    <Folder Include="public\js\games\memory" />
-    <Folder Include="public\js\games\shapegroup\" />
-    <Folder Include="public\js\games\puzzle\" />
     <Folder Include="public\js\services" />
     <Folder Include="public\lib" />
     <Folder Include="public\lib\angular" />

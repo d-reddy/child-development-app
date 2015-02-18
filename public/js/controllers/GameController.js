@@ -16,18 +16,18 @@ angular.module('Game', []).controller('GameController', function($scope) {
         },
         {
             id: 'shapegroup',
-            img: '/img/construction.jpg',
+            img: '/img/shapes.jpg',
             action: function () {
                 location.href = '/games/shapegroup';
             }
+        },
+        {
+            id: 'inprog2',
+            img: '/img/construction.jpg',
+            action: function () {
+                location.href = '/games/inprog2';
+            }
         }
-        //{
-        //    id: 'inprog2',
-        //    img: '/img/construction.jpg',
-        //    action: function () {
-        //        location.href = '/games/inprog2';
-        //    }
-        //}
     ]
 });
 
