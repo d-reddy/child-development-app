@@ -48,6 +48,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'PuzzleController'
         })
 
+         .when('/games/shapegroup', {
+            templateUrl: 'views/games/shapegroup.html',
+            controller: 'ShapeGroupController'
+        })
+
 		.when('/videos', {
 			templateUrl: 'views/default.html',
 			controller: 'VideoController'	

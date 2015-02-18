@@ -16,7 +16,7 @@ angular.module('Subtraction', []).controller('SubtractionController', function($
         setTimeout(function () {
             if ($scope.num2 > 0) {
                 for (var i = 0; i < $scope.num2; i++) {
-                    $('#card-' + i).fadeTo(3600, .05, function () {
+                    $('#card-' + i).fadeTo(1800, .05, function () {
                         if (i == $scope.num2) {
                             self.canCount = true;
                         }
@@ -25,7 +25,7 @@ angular.module('Subtraction', []).controller('SubtractionController', function($
             } else {
                 self.canCount = true;
             }
-        }, 900);
+        }, 50);
     }();
     
     $scope.range1 = function () {

@@ -15,12 +15,19 @@ angular.module('Game', []).controller('GameController', function($scope) {
             }
         },
         {
-            id: 'inprog2',
+            id: 'shapegroup',
             img: '/img/construction.jpg',
             action: function () {
-                location.href = '/games/inprog2';
+                location.href = '/games/shapegroup';
             }
         }
+        //{
+        //    id: 'inprog2',
+        //    img: '/img/construction.jpg',
+        //    action: function () {
+        //        location.href = '/games/inprog2';
+        //    }
+        //}
     ]
 });
 

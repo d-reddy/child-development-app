@@ -1,11 +1,13 @@
 angular.module('learned', ['ngRoute', 
                            'appRoutes',
                            'ngDragDrop',
+                           'ng-sortable',
 						   'Main', 
                            'MemoryService',
                            'AdditionService',
                            'SubtractionService',
                            'PuzzleService',
+                           'ShapeGroupService',
 						   'Spelling', 
 						   'Reading', 
 						   'Game',
@@ -14,5 +16,6 @@ angular.module('learned', ['ngRoute',
                            'Math',
                            'Addition',
                            'Subtraction',
-                           'Puzzle'
+                           'Puzzle',
+                           'ShapeGroup'
 						   ]);
