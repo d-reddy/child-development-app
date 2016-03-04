@@ -1,7 +1,7 @@
 # An Educational Application for Children
 This is an application I used to gain some experience with angular. It is an
 educational application that provides a series of sub-games for children
-including math games (ie addition, subtraction), a memory based matching game,
+including math games (addition, subtraction), a memory based matching game,
 as well as a rudimentary puzzle game.
 
 It is currently deployed on azure at the following link:
